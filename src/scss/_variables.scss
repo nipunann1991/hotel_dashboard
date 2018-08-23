@@ -1,0 +1,68 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+/// Regular font family
+$font-family-reg: Arial, Helvetica, sans-serif !default; 
+
+/// Code (monospace) font family
+$code-font: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace;
+
+/// Base font sizes for small and large screens
+/// Below that is 100%
+/// @type Length
+$base-font-size-mobile: 1.4rem;
+$base-font-size-tablet: 1.5rem;
+$base-font-size-desktop: 1.8rem;
+$base-font-line-height: 1.2;
+
+$h1-font-size: 32px;
+$h2-font-size: 24px;
+$base-font-size: 14px;
+
+
+/// Main brand colours
+$base-pink: #D82960;
+$base-orange: #E54F36;
+$base-yellow: #E68D29;
+$base-white: #fff;
+
+$danger-color:  #fb1010;
+
+$menu-width: 100px;
+$menu-background-color: #313541;
+$menu-font-color: #b1b3b5;
+$menu-badge: #df001f;
+$menu-border-color: #e1e1e1; 
+$navbar-icon-color: #676d7e;
+
+/// Grid
+$grid-col: 80px;
+$grid-gutter: 20px; 
+
+/// Breakpoints
+$max-site-width: 1600px;
+$max-content-width: 1180px;
+
+/// using https://github.com/at-import/breakpoint
+/// Documentation: https://github.com/at-import/breakpoint/wiki
+$small-device: 320px;
+$md-device: 430px;
+$medium-device: 480px;
+$large-device: 650px;
+$tablet: 768px;
+$tablet-medium: 900px;
+$x-small-desktop: 1024px;
+$small-desktop: 1280px;
+$medium-desktop: 1440px;
+$large-desktop: 1600px;
+$img-width: 185px;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '../' !default;
+
+

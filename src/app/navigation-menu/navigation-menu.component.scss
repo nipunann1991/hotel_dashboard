@@ -1,0 +1,146 @@
+@import '../../styles';
+
+.logo{
+	height: 60px;	
+	display: flex;	
+	align-items: center;
+	justify-content: center;
+
+	h1{
+		text-align: center;	  
+		color: $base-white;
+	}
+}
+
+
+ul.menu{
+	padding-left: 0; 
+	border-top: 1px #484d5d solid; 
+
+	li{
+		list-style: none;
+		border-bottom: 1px #484d5d solid;
+
+		&.active{
+
+			a{
+				color: #fff;
+				
+				&:before{
+					opacity: 1;	
+				}
+
+			}
+		}
+
+
+		a{
+			text-align: center;
+			text-decoration: none;
+			color: $menu-font-color;  
+			padding: 10px;
+			display: block;
+			position: relative;
+			@include transition(all 0.3s ease);
+
+			&:before{
+				content: '';
+				position: absolute;
+				width: 5px;	
+				height: 100%;	
+				background: #86ba21;
+				left: 0;	
+				top: 0;
+				opacity: 0;	
+				@include transition(all 0.3s ease);
+
+			}
+
+			&:hover{
+				color: #fff;
+				
+				&:before{
+					opacity: 1;	
+				}
+
+				
+			}
+
+			*{
+				display: block;
+			}
+
+			i{
+				font-size: 36px; 
+				margin-bottom: 3px;
+			}
+
+			span{
+				font-size: $base-font-size - 2; 
+				font-weight: 700;
+    			letter-spacing: 0.03rem;
+
+			}
+		}
+	} 
+	
+}
+
+.app-sub-menu{
+	position: fixed;
+    top: 0;
+    left: -120px;
+    width: 220px;
+    z-index: 100;
+    background: #424754;
+    height: 100%;
+	@include transition(all 0.3s ease); 
+
+    &.app-open{
+    	left: 100px;
+    }
+
+    h4{
+    	text-align: center;
+    	color: $menu-font-color;
+    	padding: 18px 0;
+    	line-height: 24px; 
+    	position: relative;
+
+    	&:before{
+    		content: '';
+    		position: absolute;
+    		height: 2px;
+    		width: 75px;
+    		background: #f42262; 
+    		bottom: 0;
+			@include calc('left', '50% - 35px');
+
+    	}
+    	
+
+
+    }
+
+
+    ul.sub-menu{
+    	 padding-left: 0;
+
+    	li{
+    		list-style: none;
+    		text-align: center;
+    		line-height: 27px;
+
+    		a{
+    			color: $menu-font-color;
+    			font-weight: 600;
+    			letter-spacing: 0.03rem;
+    			text-decoration: none;
+
+    			&:hover{
+    				color: $base-white; 
+    			}
+    		}
+    	}
+    }
+}

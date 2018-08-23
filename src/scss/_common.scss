@@ -1,0 +1,177 @@
+@charset 'UTF-8'; 
+
+@import 'variables';
+@import 'function';
+@import 'mixins';
+@import 'fonts';
+
+body{
+	background: #fbfbfb;
+
+	.app-login-wrapper{
+		height: 100%;
+	}
+
+	.app-dashboard-wrapper{
+		min-height: 100%;
+		display: flex;	
+		width: 100%;
+		padding: 0;	
+
+
+		.app-dashboard{
+			width: inherit;
+			height: inherit;
+			margin: 0;	
+
+
+			.app-navigation-menu-wrapper{
+				width: $menu-width;
+
+				.app-main-menu{
+					background: $menu-background-color;
+					color: $menu-font-color;
+					height: 100%;
+					position: fixed;
+					z-index: 101;
+					width: $menu-width;
+				}
+				
+			}
+
+			.app-content-area{ 
+				@include calc('width', '100% - '+$menu-width);
+				float: left;
+				position: relative;
+    			left: 0;
+				@include transition(all 0.3s ease); 
+
+
+    			&.app-open{
+    				left: 220px;
+    			}
+
+				.app-header{
+					height: 60px;
+					background: $base-white;
+					border-bottom: 1px #eee solid;
+				}
+				
+				.app-content-wrapper{
+					width: 100%;
+
+					.app-content{ 
+						width: 100%;
+						padding: 15px 30px;
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+
+.p0{
+	padding: 0;
+}
+
+.m0{
+	margin: 0;
+}
+
+.has-success{
+	border-color: #58B957;
+}
+
+.has-danger{
+	border-color: $danger-color;
+}
+
+.app-block{ 
+	background: #fff;
+	padding: 15px;
+	-webkit-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+    border-radius: 7px;
+
+    h5{
+    	margin: 20px 0 15px 0;
+    }
+}
+
+.btn-pink{ 
+	@include buttonBaseColor($base-pink); 
+}
+
+.btn-orange{ 
+	@include buttonBaseColor($base-orange); 
+}
+
+.btn-yellow{ 
+	@include buttonBaseColor($base-yellow); 
+}
+
+
+.box-shadow{
+	-webkit-box-shadow: 0 1px 2px 0 #b2b2b2;
+    box-shadow: 0 1px 2px 0 #b2b2b2;
+}
+
+
+.tab-content{
+	padding: 15px;	
+}
+
+.ui.form{
+
+	.field{
+
+		.ng-invalid.ng-touched{
+			border-color: $danger-color;
+		}
+
+		small{
+			color: $danger-color;
+		}
+	}
+}
+
+.app-page-header{
+	overflow: hidden;	
+	display: flex;
+	width: 100%;	
+	align-items: center;
+	padding-bottom: 15px;	 
+
+	h1{
+		font-size: $h1-font-size - 4;
+		float: left;
+		margin-bottom: 10px;	
+	}
+
+	ul.app-breadcrumb{
+		margin-bottom: 0;	
+		margin-left: auto;	
+		padding-left: 0;			
+
+		li{
+			display: inline-block;	
+			list-style: none;
+			padding-left: 20px;	
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAYAAAFBz9WbAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3xpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1Y2MwYWIzNC1mNTA0LTQ5NzMtYjY1MC05MDg2NjY0YjU0YzQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTUwREQ0MTY3REUzMTFFOEI1RkREMjY4NkY1NzFCMDgiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTUwREQ0MTU3REUzMTFFOEI1RkREMjY4NkY1NzFCMDgiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5NzgyQ0RFNjU1NjJFODExOEU3RDlFODE4MUY3REU3MyIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjY0MmFhNjk0LWRlNWEtZWI0Mi04ZWQ1LWEwNzFkMTRkMzkwNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvtlOCEAAAELSURBVHjaYvQLCJrDwMCQwgQigFgKIIAYgCIMIB4DQAAxglhAcB+IFcEiQKAEIgACCCbDABPlgDFWsQCJF0AsARBAMDWfgJgfiP8jq+eDChwGYnEWBgS4CMSWQPwNpLIPKqgPEgAxAAIIZGY6kJ4JUw5SdRuIe5EF9kFVbES28RYQJwDxOSYk234AMStMQBKI1wCxLsg9xkAcC8TeMDNMgLgApg8gwEDuCAHSi4G4GYjbGLAAJqh5nEC8ExoqC4AY2bsonLOgYIM65BwQvwNiP1AIsmAx/TkQ6wExLxDfAeIL2BQJAvEmIGYGYg0gfo+sSBWIdwHxUSB2AuLfyG5yBOINQNwNintsvgMAm78uwvLE6A0AAAAASUVORK5CYII=');
+            background-repeat: no-repeat;   
+            background-position: 8px 8px;
+    		background-size: 5px;     
+
+    		&:first-child{
+    			background: none;;
+    		}
+
+			a{
+				font-size: 13px;
+				color: #8f8f8f;
+			}
+		}
+	}
+}

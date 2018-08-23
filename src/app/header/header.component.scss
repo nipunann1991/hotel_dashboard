@@ -1,0 +1,108 @@
+@import '../../styles';
+
+.app-header-inner{  	
+	height: 100%;	
+	display: flex;	
+	align-items: center;
+
+
+
+	ul{
+		padding-left: 0;	
+		margin-bottom: 0;
+		margin-left: auto;
+		float: right;	
+		display: table;	
+
+		li{
+			list-style: none;
+			display: inline-block;	
+			display: table-cell;
+			vertical-align: middle;	
+
+			&.app-profile{
+				padding: 0 15px; 
+				color: $navbar-icon-color;
+
+				.app-profile-image{
+					height: 35px;	
+					width: 35px;	
+					border-radius: 50%;
+					background: #eee; 
+					float: left;
+					margin-right: 10px; 
+				}
+
+				.app-profile-details{
+					float: left;
+					padding-top: 3px;
+					
+					em{
+						display: block;	
+						font-style: normal;
+						line-height: 15px;
+
+						&.title{
+							font-weight: 500;
+							font-size: 13px;
+						}
+
+						&.role{
+							font-size: 11px;
+						}
+					}
+				}
+
+			}
+ 
+			a{
+				font-size: 25px;
+				padding: 15px 20px;	
+				text-decoration: none;
+				color: $navbar-icon-color;
+				position: relative; 
+				border-left: 1px $menu-border-color solid;
+				@include transition(all 0.3s ease);
+
+
+
+				&:after{
+					display: none;	
+				}
+
+				&:hover{
+					color: $menu-background-color;
+					background: #eee;
+				}
+
+
+				span.badge{
+					background: $menu-badge;
+					font-size: 11px;
+					border-radius: 50%;
+    				font-weight: 500;
+    				position: absolute;
+    				right: 12px;
+    				top: 11px;
+				}
+			}
+
+			.dropdown-menu{
+				padding: 5px;	 
+				right: -1px;	
+				margin: 0;	
+				top: 48px;
+				left: auto;
+				width: 250px;
+				border: 1px #eeeeee solid;
+				min-height: 150px;
+
+				a,p{
+					border: 0;
+					font-size: $base-font-size;
+					padding: 5px;
+				}
+			}
+		}
+	}
+}

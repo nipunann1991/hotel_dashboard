@@ -1,0 +1,45 @@
+@import '../../styles';
+
+.app-stats{
+	padding: 0;	
+	padding-right: 15px;	
+	margin-bottom: 15px;
+	
+
+	&:last-child{
+		padding-right: 0;	
+	}
+
+	.app-block{
+		height: 100%;	
+	}
+}
+
+.app-top-stats{
+	margin: 0;	
+
+	.app-stats{   
+
+		.app-stat-content{
+			h3{
+				font-size: $base-font-size + 4;
+				font-weight: 500;
+				margin-bottom: 0;		
+			}
+
+			h2{ 
+				font-size: $h2-font-size + 16;
+				
+				span.rs{
+					font-size: $base-font-size + 3;
+					font-weight: 400;
+				}
+			}
+		}
+
+	}
+}
+
+.app-charts, .app-text-editor{ 
+	margin: 0;	
+}

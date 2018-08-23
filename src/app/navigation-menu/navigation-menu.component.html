@@ -1,0 +1,26 @@
+<div class="app-main-menu">
+	<div class="logo">	
+		<h1>DB</h1>
+	</div>  
+
+	<ul class="menu">
+		<li *ngFor="let nav of navLinks; let i = index" [ngClass]="{'sub': nav.sub_menu}" (click)="toggleMenu($event, i)">
+			<a href="javascript:void(0);" routerLink="{{nav.url}}" > 
+				<i class="{{nav.icon}}"></i> 
+				<span>{{nav.label}}</span>
+			</a>
+		</li> 
+	</ul>
+</div>
+
+<div class="app-sub-menu">
+	<h4>{{sub_menu_title}}</h4>
+	<ul class="sub-menu">
+		<li *ngFor="let sub of subLinks; let i = index" >
+			<a href="javascript:void(0);" routerLink="{{sub.sub_url}}" >  
+				<span>{{sub.sub_label}}</span>
+			</a>
+		</li> 
+	</ul>
+ 	 
+</div>

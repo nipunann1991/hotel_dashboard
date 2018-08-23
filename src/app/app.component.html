@@ -1,0 +1,25 @@
+
+<div *ngIf="!isDashboard" class="app-login-wrapper">  
+	<router-outlet></router-outlet> 
+</div>
+
+
+<div *ngIf="isDashboard" class="app-dashboard-wrapper container-fluid"> 
+	
+	<div class="app-dashboard row">
+		<div class="app-navigation-menu-wrapper">
+			<app-navigation-menu></app-navigation-menu>
+		</div>
+		<div class="app-content-area"> 
+			<div class="app-header">
+				<app-header></app-header>
+			</div>
+			<div class="app-content-wrapper"> 
+				<div class="app-content">
+					<router-outlet></router-outlet>  
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
