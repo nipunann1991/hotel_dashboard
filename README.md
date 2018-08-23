@@ -1,4 +1,4 @@
-# My Angular 4 Dashboard
+# My Angular 4 Hotel Dashboard
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
